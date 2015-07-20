@@ -20,6 +20,14 @@ var hnService = {
 	}, 
 	fetchItem: function(item){
 
+	},
+	/**
+	 * Does an 'in' query with passed ids
+	 * @param  {[Array]} ids [description]
+	 * @return {[type]}     [description]
+	 */
+	storyIdsToFetch: function(ids){
+
 	}
 };
 
