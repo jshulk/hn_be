@@ -1,5 +1,6 @@
 var request = require("superagent"),
 	Q = require("q"),
+	db = require('../db'),
 	appConstants = require("../constants/appConstants");
 
 var hnService = {
@@ -28,6 +29,15 @@ var hnService = {
 	 */
 	storyIdsToFetch: function(ids){
 
+	},
+	updateStory: function(){
+		//create a deferred, make it promise based
+		var connection = db.getConnection();
+		if( connection ){
+			//process the request,
+		} else {
+			 //otherwise fail it
+		}
 	}
 };
 
