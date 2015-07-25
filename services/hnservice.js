@@ -30,6 +30,23 @@ var hnService = {
 	storyIdsToFetch: function(ids){
 
 	},
+	saveDocument: function(title){
+		var connection = db.getConnection(),
+			deferred = Q.defer(),
+			collection;
+
+		if( connection ){
+			collection = connection.collection('documents');
+			collection.insert({title: title}, function(err, result){
+				deferred.resolve(result);
+			});
+
+		} else {
+			deferred.reject("error ocurred");
+		}
+
+		return deferred.promise;
+	},
 	updateStory: function(){
 		//create a deferred, make it promise based
 		var connection = db.getConnection();
